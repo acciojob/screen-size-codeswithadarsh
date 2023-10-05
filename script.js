@@ -1,18 +1,17 @@
 //your JS code here. If required.
-const sizeInfo = document.createElement("div");
-sizeInfo.id = "sizeInfo";
-// sizeInfo.style.height = "100vh";
-// sizeInfo.style.width = "100vw";
-document.body.appendChild(sizeInfo);
-const h1 = document.createElement("h1");
-sizeInfo.appendChild(h1);
+  const widthElement = document.getElementById('width');
+        const heightElement = document.getElementById('height');
 
+        // Function to update the width and height elements
+        function updateSize() {
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            widthElement.textContent = width;
+            heightElement.textContent = height;
+        }
 
+        // Initial call to set the initial size
+        updateSize();
 
-
-var refresh = setInterval(resolution,0);
-
-function resolution (){
-    // var screenSize = window.screen;
-    h1.textContent = `Width: ${window.innerWidth} and Height: ${window.innerHeight}`;
-}
+        // Add an event listener to the window's resize event
+        window.addEventListener('resize', updateSize);
