@@ -1,17 +1,15 @@
 //your JS code here. If required.
-  const widthElement = document.getElementById('width');
-        const heightElement = document.getElementById('height');
+  let height=this.innerHeight;
+    let width=this.innerWidth;
+   let div=document.getElementById("sizeInfo");
+    let h=div.firstChild;
+    h.innerText="Width: "+width+" and Height: "+height;  
+window.addEventListener("resize",function(){
+    let height=this.innerHeight;
+    let width=this.innerWidth;
+   let div=document.getElementById("sizeInfo");
+    let h=div.firstChild;
 
-        // Function to update the width and height elements
-        function updateSize() {
-            const width = window.innerWidth;
-            const height = window.innerHeight;
-            widthElement.textContent = width;
-            heightElement.textContent = height;
-        }
-
-        // Initial call to set the initial size
-        updateSize();
-
-        // Add an event listener to the window's resize event
-        window.addEventListener('resize', updateSize);
+    h.innerText="Width: "+width+" and Height: "+height; 
+  
+  })
